@@ -2,6 +2,7 @@
 #include "Sequence.hpp"
 #include "SegmentedSequence.hpp"
 #include <functional>
+#include "AdaptiveSequence.hpp"
 
 
 class ManualSequenceTester {
@@ -53,7 +54,7 @@ private:
         int implChoice;
         std::cin >> implChoice;
     
-        if(implChoice == 7) {
+        if(implChoice == 9) {
             testNestedSequences<T>();
             return;
         }
@@ -199,7 +200,9 @@ private:
         << "4. ImmutableListSequence\n"
         << "5. MutableSegmentedSequence\n"
         << "6. ImmutableSegmentedSequence\n"
-        << "7. Test nested sequences\n"
+        << "7. MutableAdaptiveSequence\n"
+        << "8. ImmutableAdaptiveSequence\n"
+        << "9. Test nested sequences\n"
         << "Your choice: ";
     }
     void printImplementation2Menu() {
@@ -210,6 +213,7 @@ private:
         << "4. ImmutableListSequence\n"
         << "5. MutableSegmentedSequence\n"
         << "6. ImmutableSegmentedSequence\n"
+        << "7. AdaptiveSequence\n"
         << "Your choice: ";
     }
     void printTestMenu() {
@@ -228,6 +232,8 @@ private:
             case 4: return new ImmutableListSequence<T>();
             case 5: return new MutableSegmentedSequence<T>(3);
             case 6: return new ImmutableSegmentedSequence<T>(3);
+            case 7: return new MutableAdaptiveSequence<T>();
+            case 8: return new ImmutableAdaptiveSequence<T>();
             default: return nullptr;
         }
     }

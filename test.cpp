@@ -3,6 +3,7 @@
 #include "headers/Sequence.hpp"
 #include "headers/SequenceTester.hpp"
 #include "headers/SegmentedSequence.hpp"
+#include "headers/AdaptiveSequence.hpp"
 
 int pow2(int x) {
     return x * x;
